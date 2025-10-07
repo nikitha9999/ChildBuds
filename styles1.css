@@ -1,0 +1,106 @@
+/* Global Styling */
+* {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 1rem;
+}
+
+header {
+    padding: 20px;
+    color: darkgreen;
+}
+
+/* Main Section Styling */
+main {
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+/* Grid Layout Container */
+.flex-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+/* Individual Card */
+.flex-container > div {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animation on load */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animation delays for each card */
+.flex-container > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.flex-container > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Card Hover Effect */
+.flex-container > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling with Zoom on Hover */
+.flex-container img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.flex-container img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Styling */
+.flex-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Link Styling */
+a {
+    color: green;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darkgreen;
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
